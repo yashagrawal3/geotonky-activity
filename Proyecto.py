@@ -1,11 +1,11 @@
 #!/usr/bin/python
 import pygame
-import sys, gtk
+import sys
 import pygame.locals
 from pygame.constants import *
 from pygame.mixer import music
 from Cursor import CURSOR
-
+from gi.repository import Gtk
 
 #pygame.init()
 x=1200
@@ -1528,8 +1528,8 @@ def main():
     prin=interfaz()    
 
     while True:
-        while gtk.events_pending():
-            gtk.main_iteration()
+        while Gtk.events_pending():
+            Gtk.main_iteration()
         x_mouse, y_mouse = pygame.mouse.get_pos()
        
         for eventos in pygame.event.get():
@@ -1970,7 +1970,6 @@ def main():
             prin.interfaz_preg6_rect_malo1(ventana)
         elif (ocultar==105):
             prin.interfaz_preg6_rect_malo2(ventana)
-        print (x_mouse, y_mouse)
         pygame.display.update()
                     
 if __name__ == '__main__':
